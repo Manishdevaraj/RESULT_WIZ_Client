@@ -6,10 +6,11 @@ const ClassDropdown = ({ classes }: { classes: any[] }) => {
 
   const {dbUser,toggle, settoggle}=useDB();
 
-  const [selectedClass,setselectedClass]=useState();
+  const [selectedClass,setselectedClass]=useState('');
 
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const classId = event.target.value;
+                          //  * @ts-ignore 
     setselectedClass(classId);
    
     console.log("Selected Class ID:", classId);

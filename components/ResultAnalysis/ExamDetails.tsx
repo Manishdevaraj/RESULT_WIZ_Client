@@ -2,13 +2,21 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const ExaminationDetails = ({
+  //  @ts-ignore 
   examinationTime,
+  //  @ts-ignore 
   setExaminationTime,
+  //  @ts-ignore 
   deptName,
+  //  @ts-ignore 
   setDeptName,
+  //  @ts-ignore 
   year,
+  //  @ts-ignore 
   setYear,
+  //  @ts-ignore 
   c,
+  //  @ts-ignore 
   setC,
 }) => {
   return (

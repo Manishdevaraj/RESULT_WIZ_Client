@@ -9,16 +9,16 @@ export default function Layout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const { fUser, dbLoader, dbUser } = useDB();
+  const { fUser} = useDB();
   const router = useRouter();
 
   useEffect(() => {
-    if (!dbLoader && !fUser) {
+    if ( !fUser) {
       router.push('/sign-in');
     }
-  }, [dbLoader, fUser, router]);
+  }, [ fUser, router]);
 
-  if (dbLoader) return <div>Loading...</div>;
+  if (!fUser) return <div>Loading...</div>;
 
   return (
 

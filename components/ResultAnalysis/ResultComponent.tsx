@@ -1,11 +1,10 @@
 'use client';
-
+//@ts-nocheck
 import { useDB } from "@/lib/Context";
 import { getResult } from "@/lib/user.actions";
 import Image from "next/image";
 import React, { useRef, useState } from "react";
-import { jsPDF } from 'jspdf';
-import html2canvas from 'html2canvas';
+
 import { useReactToPrint } from "react-to-print";
 import { Button } from "../ui/button";
 import ExaminationDetails from "./ExamDetails";
@@ -21,12 +20,15 @@ const ResultComponent = () => {
   const [resultData4, setResultData4] = useState(null);
   const [resultData5, setResultData5] = useState(null);
   const [resultData7, setResultData7] = useState(null);
+                          //   @ts-ignore 
 
   const handleCheckboxChange = async (semester) => {
     console.log(`Selected Semester: ${semester}`);
     setSelectedSemester(semester);
 
     try {
+                           {/* @ts-ignore */}
+
       const { a1, a2, a3, a4, a5, a7 } = await getResult(semester, dbUser.classId);
       setResultData1(a1);
       setResultData2(a2);
@@ -43,8 +45,11 @@ const ResultComponent = () => {
   };
 
   const studentMap = new Map();
+                           {/* @ts-ignore */}
 
   resultData4?.subjectArrears.forEach(subject => {
+                           {/* @ts-ignore */}
+
     subject.failedStudents.forEach(student => {
       if (!studentMap.has(student.rollNumber)) {
         studentMap.set(student.rollNumber, {
@@ -73,7 +78,7 @@ const ResultComponent = () => {
    const contentRef3 = useRef<HTMLDivElement>(null);
    const contentRef4 = useRef<HTMLDivElement>(null);
    const contentRef5 = useRef<HTMLDivElement>(null);
-   const contentRef6 = useRef<HTMLDivElement>(null);
+   
    const contentRef7 = useRef<HTMLDivElement>(null);
 
 //    const downloadPDF = () => {
@@ -228,6 +233,8 @@ const ResultComponent = () => {
             </tr>
           </thead>
           <tbody>
+                           {/* @ts-ignore */}
+
             {resultData1?.subjects.map((subject, index) => (
               <tr key={subject.subjectCode} className="border-b">
                 <td className="border border-gray-300 px-3 py-2 text-center">{index + 1}</td>

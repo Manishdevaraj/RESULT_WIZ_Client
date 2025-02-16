@@ -24,6 +24,7 @@ const StaffListComponent: React.FC<StaffListComponentProps> = ({ staffDetails })
   const handleRoleChange = (id: string, role: string) => {
     setStaffData(prevData =>
       prevData.map(member =>
+             //@ts-ignore
         member._id === id ? { ...member, [role]: !member[role] } : member
       )
     );

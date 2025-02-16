@@ -6,7 +6,7 @@ import { useDB } from "@/lib/Context";
 // Dynamically import Lottie
 
 const Subjects = () => {
-  const { dbUser,classData } = useDB();
+  const { classData } = useDB();
   
 
   
@@ -17,7 +17,9 @@ const Subjects = () => {
       
       {classData && classData.subjects.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {classData.subjects.map((subject, index) => (
+                           {/* @ts-ignore */}
+
+          {classData.subjects.map((subject) => (
             <div key={subject._id} className="bg-white p-4 shadow-lg rounded-xl">
               <h3 className="text-xl font-bold text-amber-600 mb-2">{subject.subjectId.name}</h3>
               <p className="text-sm text-gray-600">

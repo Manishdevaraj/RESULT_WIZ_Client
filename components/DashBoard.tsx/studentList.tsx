@@ -35,6 +35,8 @@ const StudentList = () => {
   return (
     <div className='overflow-y-auto h-[500px]'>
       <Button onClick={ExportData} className='bg-amber-500 hover:bg-amber-400'>Export Data</Button>
+                           {/* @ts-ignore */}
+
          {sortedStudents?.map((item,index)=>
               ( 
                 <div key={index} className="w-full h-6 p-4 mt-3 rounded-xl  

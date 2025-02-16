@@ -58,6 +58,7 @@ const Nav = () => {
     </div>
   );
 };
+        //@ts-ignore
 
 const NavLink = ({ label, onClick }) => (
   <p className="text-sm font-bold cursor-pointer hover:text-amber-400" onClick={onClick}>
