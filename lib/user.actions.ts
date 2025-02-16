@@ -1,7 +1,7 @@
 import { toast } from '@/hooks/use-toast';
 import axios from 'axios';
-const url="http://localhost:5000"
-// const url="http://172.19.57.226:5000"
+// const url="http://localhost:5000"
+const url="https://result-wiz-server.onrender.com"
 
 export const getResult=async(sem:number,classId:string)=>
     {
